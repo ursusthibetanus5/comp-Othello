@@ -1,3 +1,5 @@
+package Othello;
+
 public class Board{
     //ゲーム実行中フラグ
     static boolean game = true;
@@ -21,7 +23,7 @@ public class Board{
         //初期状態の配置
         board[3][3] = BLACK;
         board[3][4] = WHITE;
-        board[4][4] = WHITE;
+        board[4][3] = WHITE;
         board[4][4] = BLACK;
         //次に置く石の色を指定
         stone = BLACK;
@@ -307,20 +309,3 @@ public class Board{
     }
 }
 
-public class Othello{
-    public static void main(String[]args){
-        Board.initialize();
-        Board.showBoard();
-        //コンソールからの入力を受け付ける
-        Scanner s = new Scanner(System.in);
-        //ゲーム実行中のフラグがtrueの間ループする
-        while(Board.game){
-            System.out.println("石を置くX座標を入力してください:");
-            int x = s.nextInt();
-            System.out.println("石を置くY座標を入力してください:");
-            int y = s.nextInt();
-            Board.setStone(x, y);
-        }
-    s.close();
-    }
-}
